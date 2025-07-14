@@ -558,9 +558,9 @@
     // Thêm sự kiện mẫu nếu chưa có
     if (Object.keys(events).length === 0) {
         events = {
-            [createDateKey(8, currentMonth, currentYear)]: "Hẹn hò cùng người ấy ❤️",
-            [createDateKey(15, currentMonth, currentYear)]: "Mua quà sinh nhật",
-            [createDateKey(20, currentMonth, currentYear)]: "Đi chơi công viên"
+            // [createDateKey(8, currentMonth, currentYear)]: "Hẹn hò cùng người ấy ❤️",
+            // [createDateKey(15, currentMonth, currentYear)]: "Mua quà sinh nhật",
+            // [createDateKey(20, currentMonth, currentYear)]: "Đi chơi công viên"
         };
         localStorage.setItem('calendarEvents', JSON.stringify(events));
     }
