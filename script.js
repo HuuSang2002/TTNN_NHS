@@ -249,13 +249,181 @@
  * 
  */
 // lịch luôn á
-    const calendar = document.getElementById("calendar");
+    // const calendar = document.getElementById("calendar");
+    // const title = document.getElementById("month-year-title");
+
+    // let currentMonth = 6; // Tháng 7 (tính từ 0)
+    // let currentYear = 2025;
+
+    // // Lấy dữ liệu từ localStorage hoặc tạo object mới
+    // let events = JSON.parse(localStorage.getItem('calendarEvents')) || {};
+
+    // function renderCalendar(month, year) {
+    //     calendar.innerHTML = "";
+    //     title.textContent = `Tháng ${month + 1}, ${year}`;
+
+    //     const firstDay = new Date(year, month, 1);
+    //     const firstDayIndex = firstDay.getDay();
+    //     const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    //     for (let i = 0; i < firstDayIndex; i++) {
+    //         const empty = document.createElement("div");
+    //         empty.classList.add("day");
+    //         calendar.appendChild(empty);
+    //     }
+
+    //     for (let day = 1; day <= daysInMonth; day++) {
+    //         const box = document.createElement("div");
+    //         box.className = "day";
+
+    //         const number = document.createElement("div");
+    //         number.className = "day-number";
+    //         number.textContent = day;
+
+    //         const key = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+    //         if (events[key]) {
+    //             const evt = document.createElement("div");
+    //             evt.className = "event";
+    //             evt.textContent = events[key];
+    //             box.appendChild(evt);
+    //         }
+
+    //         box.appendChild(number);
+
+    //         box.addEventListener("click", (e) => {
+    //             e.stopPropagation();
+    //             showInputPopup(box, key);
+    //         });
+
+    //         calendar.appendChild(box);
+    //     }
+    // }
+
+    // function showInputPopup(dayBox, key) {
+    //     const oldPopup = document.querySelector(".input-popup");
+    //     if (oldPopup) oldPopup.remove();
+
+    //     const popup = document.createElement("div");
+    //     popup.className = "input-popup";
+
+    //     const input = document.createElement("input");
+    //     input.type = "text";
+    //     input.placeholder = "Nhập sự kiện...";
+    //     input.value = events[key] || "";
+
+    //     const saveBtn = document.createElement("button");
+    //     saveBtn.textContent = "Lưu";
+    //     saveBtn.onclick = () => {
+    //         const val = input.value.trim();
+    //         if (val) {
+    //             events[key] = val;
+    //         } else {
+    //             delete events[key];
+    //         }
+    //         // Lưu vào localStorage
+    //         localStorage.setItem('calendarEvents', JSON.stringify(events));
+    //         renderCalendar(currentMonth, currentYear);
+    //     };
+
+    //     // Thêm nút xóa
+    //     const deleteBtn = document.createElement("button");
+    //     deleteBtn.textContent = "Xóa";
+    //     deleteBtn.style.backgroundColor = "#ff6b6b";
+    //     deleteBtn.onclick = () => {
+    //         delete events[key];
+    //         localStorage.setItem('calendarEvents', JSON.stringify(events));
+    //         renderCalendar(currentMonth, currentYear);
+    //     };
+
+    //     popup.appendChild(input);
+    //     popup.appendChild(saveBtn);
+    //     popup.appendChild(deleteBtn);
+    //     dayBox.appendChild(popup);
+    //     input.focus();
+    // }
+
+    // function changeMonth(offset) {
+    //     currentMonth += offset;
+    //     if (currentMonth < 0) {
+    //         currentMonth = 11;
+    //         currentYear -= 1;
+    //     } else if (currentMonth > 11) {
+    //         currentMonth = 0;
+    //         currentYear += 1;
+    //     }
+    //     renderCalendar(currentMonth, currentYear);
+    // }
+
+    // document.addEventListener("click", () => {
+    //     const popup = document.querySelector(".input-popup");
+    //     if (popup) popup.remove();
+    // });
+
+    // // Thêm nút xuất/nhập dữ liệu
+    // const exportBtn = document.createElement("button");
+    // exportBtn.textContent = "Xuất dữ liệu";
+    // exportBtn.style.marginTop = "20px";
+    // exportBtn.onclick = exportData;
+
+    // const importBtn = document.createElement("button");
+    // importBtn.textContent = "Nhập dữ liệu";
+    // importBtn.style.marginTop = "20px";
+    // importBtn.style.marginLeft = "10px";
+    // importBtn.onclick = importData;
+
+    // document.querySelector(".calendar-controls").appendChild(exportBtn);
+    // document.querySelector(".calendar-controls").appendChild(importBtn);
+
+    // function exportData() {
+    //     const dataStr = JSON.stringify(events);
+    //     const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+        
+    //     const exportFileDefaultName = `lich-su-kien-${currentYear}-${currentMonth+1}.json`;
+        
+    //     const linkElement = document.createElement('a');
+    //     linkElement.setAttribute('href', dataUri);
+    //     linkElement.setAttribute('download', exportFileDefaultName);
+    //     linkElement.click();
+    // }
+
+    // function importData() {
+    //     const input = document.createElement('input');
+    //     input.type = 'file';
+    //     input.accept = '.json';
+        
+    //     input.onchange = e => { 
+    //         const file = e.target.files[0];
+    //         const reader = new FileReader();
+    //         reader.readAsText(file,'UTF-8');
+            
+    //         reader.onload = readerEvent => {
+    //             const content = readerEvent.target.result;
+    //             try {
+    //                 const newEvents = JSON.parse(content);
+    //                 events = newEvents;
+    //                 localStorage.setItem('calendarEvents', JSON.stringify(events));
+    //                 renderCalendar(currentMonth, currentYear);
+    //                 alert('Nhập dữ liệu thành công!');
+    //             } catch(err) {
+    //                 alert('File không hợp lệ!');
+    //             }
+    //         }
+    //     }
+        
+    //     input.click();
+    // }
+
+    // // Gọi lần đầu
+    // renderCalendar(currentMonth, currentYear);
+
+  const calendar = document.getElementById("calendar");
     const title = document.getElementById("month-year-title");
 
-    let currentMonth = 6; // Tháng 7 (tính từ 0)
-    let currentYear = 2025;
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
 
-    // Lấy dữ liệu từ localStorage hoặc tạo object mới
+    // Khởi tạo events từ localStorage hoặc tạo mới
     let events = JSON.parse(localStorage.getItem('calendarEvents')) || {};
 
     function renderCalendar(month, year) {
@@ -266,43 +434,59 @@
         const firstDayIndex = firstDay.getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
+        // Render ngày trong tuần
         for (let i = 0; i < firstDayIndex; i++) {
-            const empty = document.createElement("div");
-            empty.classList.add("day");
-            calendar.appendChild(empty);
+            calendar.appendChild(createEmptyDay());
         }
 
+        // Render các ngày trong tháng
         for (let day = 1; day <= daysInMonth; day++) {
-            const box = document.createElement("div");
-            box.className = "day";
-
-            const number = document.createElement("div");
-            number.className = "day-number";
-            number.textContent = day;
-
-            const key = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-
-            if (events[key]) {
-                const evt = document.createElement("div");
-                evt.className = "event";
-                evt.textContent = events[key];
-                box.appendChild(evt);
-            }
-
-            box.appendChild(number);
-
-            box.addEventListener("click", (e) => {
-                e.stopPropagation();
-                showInputPopup(box, key);
-            });
-
-            calendar.appendChild(box);
+            calendar.appendChild(createDayElement(day, month, year));
         }
     }
 
+    function createEmptyDay() {
+        const empty = document.createElement("div");
+        empty.classList.add("day");
+        return empty;
+    }
+
+    function createDayElement(day, month, year) {
+        const box = document.createElement("div");
+        box.className = "day";
+
+        const number = document.createElement("div");
+        number.className = "day-number";
+        number.textContent = day;
+
+        const key = createDateKey(day, month, year);
+        
+        // Hiển thị sự kiện nếu có
+        if (events[key]) {
+            const evt = document.createElement("div");
+            evt.className = "event";
+            evt.textContent = events[key];
+            box.appendChild(evt);
+        }
+
+        box.appendChild(number);
+        box.addEventListener("click", (e) => handleDayClick(e, box, key));
+
+        return box;
+    }
+
+    function createDateKey(day, month, year) {
+        return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    }
+
+    function handleDayClick(e, box, key) {
+        e.stopPropagation();
+        showInputPopup(box, key);
+    }
+
     function showInputPopup(dayBox, key) {
-        const oldPopup = document.querySelector(".input-popup");
-        if (oldPopup) oldPopup.remove();
+        // Xóa popup cũ nếu có
+        removeExistingPopup();
 
         const popup = document.createElement("div");
         popup.className = "input-popup";
@@ -312,35 +496,48 @@
         input.placeholder = "Nhập sự kiện...";
         input.value = events[key] || "";
 
-        const saveBtn = document.createElement("button");
-        saveBtn.textContent = "Lưu";
-        saveBtn.onclick = () => {
-            const val = input.value.trim();
-            if (val) {
-                events[key] = val;
-            } else {
-                delete events[key];
-            }
-            // Lưu vào localStorage
-            localStorage.setItem('calendarEvents', JSON.stringify(events));
+        const saveBtn = createButton("Lưu", "#ff8fab", () => {
+            saveEvent(key, input.value.trim());
             renderCalendar(currentMonth, currentYear);
-        };
+        });
 
-        // Thêm nút xóa
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Xóa";
-        deleteBtn.style.backgroundColor = "#ff6b6b";
-        deleteBtn.onclick = () => {
-            delete events[key];
-            localStorage.setItem('calendarEvents', JSON.stringify(events));
+        const deleteBtn = createButton("Xóa", "#ff6b6b", () => {
+            deleteEvent(key);
             renderCalendar(currentMonth, currentYear);
-        };
+        });
 
         popup.appendChild(input);
         popup.appendChild(saveBtn);
         popup.appendChild(deleteBtn);
         dayBox.appendChild(popup);
         input.focus();
+    }
+
+    function removeExistingPopup() {
+        const popup = document.querySelector(".input-popup");
+        if (popup) popup.remove();
+    }
+
+    function createButton(text, bgColor, onClick) {
+        const btn = document.createElement("button");
+        btn.textContent = text;
+        btn.style.backgroundColor = bgColor;
+        btn.onclick = onClick;
+        return btn;
+    }
+
+    function saveEvent(key, value) {
+        if (value) {
+            events[key] = value;
+        } else {
+            delete events[key];
+        }
+        localStorage.setItem('calendarEvents', JSON.stringify(events));
+    }
+
+    function deleteEvent(key) {
+        delete events[key];
+        localStorage.setItem('calendarEvents', JSON.stringify(events));
     }
 
     function changeMonth(offset) {
@@ -355,64 +552,18 @@
         renderCalendar(currentMonth, currentYear);
     }
 
-    document.addEventListener("click", () => {
-        const popup = document.querySelector(".input-popup");
-        if (popup) popup.remove();
-    });
+    // Xử lý click bên ngoài popup
+    document.addEventListener("click", removeExistingPopup);
 
-    // Thêm nút xuất/nhập dữ liệu
-    const exportBtn = document.createElement("button");
-    exportBtn.textContent = "Xuất dữ liệu";
-    exportBtn.style.marginTop = "20px";
-    exportBtn.onclick = exportData;
-
-    const importBtn = document.createElement("button");
-    importBtn.textContent = "Nhập dữ liệu";
-    importBtn.style.marginTop = "20px";
-    importBtn.style.marginLeft = "10px";
-    importBtn.onclick = importData;
-
-    document.querySelector(".calendar-controls").appendChild(exportBtn);
-    document.querySelector(".calendar-controls").appendChild(importBtn);
-
-    function exportData() {
-        const dataStr = JSON.stringify(events);
-        const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-        
-        const exportFileDefaultName = `lich-su-kien-${currentYear}-${currentMonth+1}.json`;
-        
-        const linkElement = document.createElement('a');
-        linkElement.setAttribute('href', dataUri);
-        linkElement.setAttribute('download', exportFileDefaultName);
-        linkElement.click();
+    // Thêm sự kiện mẫu nếu chưa có
+    if (Object.keys(events).length === 0) {
+        events = {
+            [createDateKey(8, currentMonth, currentYear)]: "Hẹn hò cùng người ấy ❤️",
+            [createDateKey(15, currentMonth, currentYear)]: "Mua quà sinh nhật",
+            [createDateKey(20, currentMonth, currentYear)]: "Đi chơi công viên"
+        };
+        localStorage.setItem('calendarEvents', JSON.stringify(events));
     }
 
-    function importData() {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.accept = '.json';
-        
-        input.onchange = e => { 
-            const file = e.target.files[0];
-            const reader = new FileReader();
-            reader.readAsText(file,'UTF-8');
-            
-            reader.onload = readerEvent => {
-                const content = readerEvent.target.result;
-                try {
-                    const newEvents = JSON.parse(content);
-                    events = newEvents;
-                    localStorage.setItem('calendarEvents', JSON.stringify(events));
-                    renderCalendar(currentMonth, currentYear);
-                    alert('Nhập dữ liệu thành công!');
-                } catch(err) {
-                    alert('File không hợp lệ!');
-                }
-            }
-        }
-        
-        input.click();
-    }
-
-    // Gọi lần đầu
+    // Render lần đầu
     renderCalendar(currentMonth, currentYear);
