@@ -1096,7 +1096,7 @@
 
 /*----------------------------------------------------------------------------*/
 /*KỈ NIỆM 3 THÁNG QUEN NHAU*/
-  .main-title {
+      .main-title {
             color: #333;
             margin-top: 50px;
         }
@@ -1108,13 +1108,17 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 24px;
             margin-top: 20px;
             transition: background-color 0.3s;
+              width: 1000px;
+            height: 200px;
         }
         
         .open-video-btn:hover {
             background-color: #b92323;
+             width: 1000px;
+            height: 200px;
         }
         
         /* CSS cho popup video */
@@ -1152,6 +1156,5 @@
             cursor: pointer;
             background: none;
             border: none;
+           
         }
-
-  
