@@ -567,3 +567,43 @@
 
     // Render lần đầu
     renderCalendar(currentMonth, currentYear);
+
+
+/*----------------------------------------------------------------------------*/
+/*KỈ NIỆM 3 THÁNG QUEN NHAU*/
+
+ document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('myVideo');
+            const videoPopup = document.getElementById('videoPopup');
+            const openBtn = document.getElementById('openVideoBtn');
+            const closeBtn = document.getElementById('closeVideoBtn');
+            
+            // Mở popup video
+            openBtn.addEventListener('click', function() {
+                videoPopup.style.display = 'flex';
+                video.play().catch(error => {
+                    console.log('Tự động phát bị chặn:', error);
+                });
+            });
+            
+            // Đóng popup video
+            closeBtn.addEventListener('click', function() {
+                videoPopup.style.display = 'none';
+                video.pause();
+                video.currentTime = 0; // Reset video về đầu
+            });
+            
+            // Đóng khi click bên ngoài video
+            videoPopup.addEventListener('click', function(e) {
+                if (e.target === videoPopup) {
+                    videoPopup.style.display = 'none';
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            });
+            
+            // Xử lý lỗi nếu video không tải được
+            video.addEventListener('error', function() {
+                alert('Không thể tải video. Vui lòng kiểm tra đường dẫn hoặc định dạng video.');
+            });
+        });
