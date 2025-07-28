@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <!-- Thiết lập bộ mã ký tự -->
-        <meta charset="UTF-8">
 
-        <!-- Giúp hiển thị tốt trên các thiết bị di động -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <!-- Thiết lập bộ mã ký tự -->
+    <meta charset="UTF-8">
 
-        <!-- Tiêu đề hiển thị trên tab trình duyệt -->
-        <title>TÌNH YÊU Ó</title>
+    <!-- Giúp hiển thị tốt trên các thiết bị di động -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-          <!-- Tạo icon cho tab -->
-        <link rel="icon" href="image/heart.png" type="image/png">
+    <!-- Tiêu đề hiển thị trên tab trình duyệt -->
+    <title>TÌNH YÊU Ó</title>
 
-        <!-- Thư viện hiệu ứng Animate.css -->
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Tạo icon cho tab -->
+    <link rel="icon" href="image/heart.png" type="image/png">
 
-        <!-- Font chữ từ Google Fonts -->
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;600;700&display=swap">
+    <!-- Thư viện hiệu ứng Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-        <!-- File CSS tùy chỉnh -->
-        <link rel="stylesheet" href="style.css">
+    <!-- Font chữ từ Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;600;700&display=swap">
 
-        <style>
+    <!-- File CSS tùy chỉnh -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
         /* Thêm style cho phần ảnh mới */
         .photo-gallery {
             display: flex;
@@ -32,24 +32,24 @@
             margin: 40px 0;
             flex-wrap: wrap;
         }
-        
+
         .photo-container {
             width: 45%;
             margin-bottom: 20px;
             text-align: center;
         }
-        
+
         .photo-container img {
             max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
-        
+
         .photo-container img:hover {
             transform: scale(1.03);
         }
-        
+
         .photo-caption {
             margin-top: 10px;
             font-family: 'Dancing Script', cursive;
@@ -57,131 +57,133 @@
             color: #ff6b9d;
         }
     </style>
-    </head>
-    <body>
+</head>
 
-        <!-- Hiệu ứng nền: hoa rơi, pháo hoa, nền không gian -->
-        <div class="interactive-bg" id="interactive-bg"></div>
-        <div id="petals-container"></div>
-        <!-- <div id="fireworks-container"></div> -->
-        <div class="cosmic-bg"></div>
+<body>
 
-        <!-- Toàn bộ nội dung nằm trong container chính -->
-        <div class="container">
+    <!-- Hiệu ứng nền: hoa rơi, pháo hoa, nền không gian -->
+    <div class="interactive-bg" id="interactive-bg"></div>
+    <div id="petals-container"></div>
+    <!-- <div id="fireworks-container"></div> -->
+    <div class="cosmic-bg"></div>
 
-            <!-- Phần giới thiệu cặp đôi và bộ đếm thời gian -->
-            <section class="hero-section">
-                <div class="hero-content">
-                    <!-- Tiêu đề chính có hiệu ứng mờ dần -->
-                    <h1 class="animate__animated animate__fadeInDown">ĐẾM NGÀY
-                        YÊU</h1>
+    <!-- Toàn bộ nội dung nằm trong container chính -->
+    <div class="container">
 
-                    <!-- Tên cặp đôi xuất hiện sau 1s -->
-                    <div
-                        class="couple-names animate__animated animate__fadeIn animate__delay-1s">
-                        Trần Thị Như Nguyệt ❤️ Nguyễn Hữu Sang
-                    </div>
+        <!-- Phần giới thiệu cặp đôi và bộ đếm thời gian -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <!-- Tiêu đề chính có hiệu ứng mờ dần -->
+                <h1 class="animate__animated animate__fadeInDown">ĐẾM NGÀY
+                    YÊU</h1>
 
-                    <!-- Bộ đếm thời gian yêu -->
-                    <div
-                        class="love-count animate__animated animate__fadeIn animate__delay-2s">
-                        <div class="count-title">Hành Trình Yêu</div>
+                <!-- Tên cặp đôi xuất hiện sau 1s -->
+                <div class="couple-names animate__animated animate__fadeIn animate__delay-1s">
+                    Trần Thị Như Nguyệt ❤️ Nguyễn Hữu Sang
+                </div>
 
-                        <!-- Các ô hiển thị số ngày, giờ, phút, giây -->
-                        <div class="count-container">
-                            <div class="count-box">
-                                <div class="count-number" id="days">0</div>
-                                <div class="count-label">Ngày</div>
-                            </div>
-                            <div class="count-box">
-                                <div class="count-number" id="hours">0</div>
-                                <div class="count-label">Giờ</div>
-                            </div>
-                            <div class="count-box">
-                                <div class="count-number" id="minutes">0</div>
-                                <div class="count-label">Phút</div>
-                            </div>
-                            <div class="count-box">
-                                <div class="count-number" id="seconds">0</div>
-                                <div class="count-label">Giây</div>
-                            </div>
+                <!-- Bộ đếm thời gian yêu -->
+                <div class="love-count animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="count-title">Hành Trình Yêu</div>
+
+                    <!-- Các ô hiển thị số ngày, giờ, phút, giây -->
+                    <div class="count-container">
+                        <div class="count-box">
+                            <div class="count-number" id="days">0</div>
+                            <div class="count-label">Ngày</div>
+                        </div>
+                        <div class="count-box">
+                            <div class="count-number" id="hours">0</div>
+                            <div class="count-label">Giờ</div>
+                        </div>
+                        <div class="count-box">
+                            <div class="count-number" id="minutes">0</div>
+                            <div class="count-label">Phút</div>
+                        </div>
+                        <div class="count-box">
+                            <div class="count-number" id="seconds">0</div>
+                            <div class="count-label">Giây</div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+
+    
+      
 
 
 
-                
+            <!-- Hiệu ứng sao băng -->
+            <!-- <div id="shooting-stars"></div> -->
+        </section>
 
-                <!-- Hiệu ứng sao băng -->
-                <!-- <div id="shooting-stars"></div> -->
-            </section>
+        <!-- Phần ảnh 1 - Ảnh cặp đôi -->
+        <div class="photo-gallery animate__animated animate__fadeIn">
+            <div class="photo-container">
+                <img src="image/a3.jpg" alt="Ảnh của chúng ta">
+                <!-- Thêm audio player ở đây -->
+                <audio controls style="width: 100%; margin: 10px 0;">
+                    <source src="music/Yeu5.mp3" type="audio/mpeg">
 
-            <!-- Phần ảnh 1 - Ảnh cặp đôi -->
-            <div class="photo-gallery animate__animated animate__fadeIn">
-                <div class="photo-container">
-                    <img src="image/a3.jpg" alt="Ảnh của chúng ta">
-                    <!-- Thêm audio player ở đây -->
-                    <audio controls style="width: 100%; margin: 10px 0;">
-                        <source src="music/Yeu5.mp3" type="audio/mpeg">
+                </audio>
+                <div class="photo-caption">MỘT EM BÉ XINH ĐẸP</div>
+            </div>
 
-                    </audio>
-                    <div class="photo-caption">MỘT EM BÉ XINH ĐẸP</div>
-                </div>
+            <div class="photo-container">
+                <img src="image/a2.jpg" alt="Ảnh kỷ niệm">
+                <audio controls style="width: 100%; margin: 10px 0;">
+                    <source src="music/TungNgayYeuEm.mp3" type="audio/mpeg">
 
-                <div class="photo-container">
-                    <img src="image/a2.jpg" alt="Ảnh kỷ niệm">
-                    <audio controls style="width: 100%; margin: 10px 0;">
-                        <source src="music/TungNgayYeuEm.mp3" type="audio/mpeg">
+                </audio>
+                <div class="photo-caption">KHOẢNH KHẮC NẮM TAY ĐỒ Á ❤️</div>
+            </div>
+        </div>
 
-                    </audio>
-                    <div class="photo-caption">KHOẢNH KHẮC NẮM TAY ĐỒ Á ❤️</div>
+        <!-- Thông tin của từng người trong cặp đôi -->
+        <div class="couple-info">
+            <!-- Thông tin bạn nam -->
+            <div class="person animate__animated animate__fadeInLeft">
+                <div class="person-name">Nguyễn Hữu Sang</div>
+                <div class="person-details">
+                    <p>Ngày sinh: 09/12/2002</p>
+                    <p>Cung hoàng đạo: <span class="zodiac">Nhân Mã
+                            ♐</span></p>
+                    <p>Biệt danh: Chuột ú, Con nợ, ....</p>
+                    <p>Tính cách: Năng động, lạc quan, thích phiêu lưu</p>
+                    <p>Sở thích: Hun chủ nợ, ngắm chủ nợ, pla pla </p>
                 </div>
             </div>
 
-            <!-- Thông tin của từng người trong cặp đôi -->
-            <div class="couple-info">
-                <!-- Thông tin bạn nam -->
-                <div class="person animate__animated animate__fadeInLeft">
-                    <div class="person-name">Nguyễn Hữu Sang</div>
-                    <div class="person-details">
-                        <p>Ngày sinh: 09/12/2002</p>
-                        <p>Cung hoàng đạo: <span class="zodiac">Nhân Mã
-                                ♐</span></p>
-                        <p>Biệt danh: Chuột ú, Con nợ, ....</p>
-                        <p>Tính cách: Năng động, lạc quan, thích phiêu lưu</p>
-                        <p>Sở thích: Hun chủ nợ, ngắm chủ nợ, pla pla </p>
-                    </div>
-                </div>
-
-                <!-- Thông tin bạn nữ -->
-                <div class="person animate__animated animate__fadeInRight">
-                    <div class="person-name">Trần Thị Như Nguyệt</div>
-                    <div class="person-details">
-                        <p>Ngày sinh: 21/08/2003</p>
-                        <p>Cung hoàng đạo: <span class="zodiac">Sư Tử
-                                ♌</span></p>
-                        <p>Biệt danh: Chủ nợ, bông hoa đẹp nhắt, .... </p>
-                        <p>Tính cách: Ấm áp, hào phóng, đầy nhiệt huyết</p>
-                        <p>Sở thích: Siết nợ, hẹ hẹ</p>
-                    </div>
+            <!-- Thông tin bạn nữ -->
+            <div class="person animate__animated animate__fadeInRight">
+                <div class="person-name">Trần Thị Như Nguyệt</div>
+                <div class="person-details">
+                    <p>Ngày sinh: 21/08/2003</p>
+                    <p>Cung hoàng đạo: <span class="zodiac">Sư Tử
+                            ♌</span></p>
+                    <p>Biệt danh: Chủ nợ, bông hoa đẹp nhắt, .... </p>
+                    <p>Tính cách: Ấm áp, hào phóng, đầy nhiệt huyết</p>
+                    <p>Sở thích: Siết nợ, hẹ hẹ</p>
                 </div>
             </div>
+        </div>
 
-            <!-- Phần ảnh 2 - Ảnh kỷ niệm -->
-            <div class="photo-gallery animate__animated animate__fadeIn">
-                <div class="photo-container">
-                    <img src="image/a4.jpg" alt="Kỷ niệm đặc biệt">
-                    <div class="photo-caption">Ngày chúng ta bên nhau</div>
-                </div>
+        <!-- Phần ảnh 2 - Ảnh kỷ niệm -->
+        <div class="photo-gallery animate__animated animate__fadeIn">
+            <div class="photo-container">
+                <img src="image/a4.jpg" alt="Kỷ niệm đặc biệt">
+                <div class="photo-caption">Ngày chúng ta bên nhau</div>
             </div>
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
-            <!-- Ở phần này thêm giao diện lịch theo tháng để đánh dấu vào được không  -->
-            <!-- Lịch đánh dấu ngày kỷ niệm -->
-            <!-- Lịch Kỷ Niệm -->
-               <div class="calendar-header">
+        </div>
+        
+        <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- Ở phần này thêm giao diện lịch theo tháng để đánh dấu vào được không  -->
+        <!-- Lịch đánh dấu ngày kỷ niệm -->
+        <!-- Lịch Kỷ Niệm -->
+        <div class="calendar-header">
             <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">LỊCH LẤY LỜI</h1>
-            <br>   <br>   <br>
+            <br> <br> <br>
             <h1 id="month-year-title">Tháng 7, 2025</h1>
 
         </div>
@@ -204,125 +206,114 @@
         <div class="calendar" id="calendar"></div>
 
         <div class="heart-corner">❤️</div>
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
 
-            <!-- Mốc thời gian tình yêu (timeline) -->
-            <div class="timeline">
-                <h2 class="timeline-title">Chuyến Tàu Tình Yêu</h2>
+        <!-- Mốc thời gian tình yêu (timeline) -->
+        <div class="timeline">
+            <h2 class="timeline-title">Chuyến Tàu Tình Yêu</h2>
 
-                <div class="timeline-container">
-                    <!-- Mỗi timeline-item là một kỷ niệm đáng nhớ -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">20/04/2025</div>
-                            <div class="timeline-text">Ngày đầu tiên chúng ta
-                                gặp nhau ở bến sông Bạch Đằng...</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">27/04/2025</div>
-                            <div class="timeline-text">Đi xem pháo bông ngắm kỉ
-                                niệm 50 năm Thống Nhất Đất Nước </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">24/05/2025</div>
-                            <div class="timeline-text">Đi siêu thị Eaon Mall Tân
-                                Phú ❤️❤️</div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">25,26,27,28/06/2025</div>
-                            <div class="timeline-text">Bốn hôm được ôm, hun Cục
-                                Dàng đã ơi là đã ❤️❤️🥰🔥🔥 </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">06/07/2025</div>
-                            <div class="timeline-text">Đi ăn mì cay nà, ôm cục
-                                dàng nàng, vlog đi chơi nà ❤️❤️ <br\>(Bạn đang
-                                    đọc tin kia tui ghiền bạn quó đi) </div>
-                            </div>
-                        </div>
-
+            <div class="timeline-container">
+                <!-- Mỗi timeline-item là một kỷ niệm đáng nhớ -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">20/04/2025</div>
+                        <div class="timeline-text">Ngày đầu tiên chúng ta
+                            gặp nhau ở bến sông Bạch Đằng...</div>
                     </div>
                 </div>
 
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">27/04/2025</div>
+                        <div class="timeline-text">Đi xem pháo bông ngắm kỉ
+                            niệm 50 năm Thống Nhất Đất Nước </div>
+                    </div>
+                </div>
 
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">24/05/2025</div>
+                        <div class="timeline-text">Đi siêu thị Eaon Mall Tân
+                            Phú ❤️❤️</div>
+                    </div>
+                </div>
 
-<!-- /*----------------------------------------------------------------------------*/ -->
-<!-- /*KỈ NIỆM 3 THÁNG QUEN NHAU*/ -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">25,26,27,28/06/2025</div>
+                        <div class="timeline-text">Bốn hôm được ôm, hun Cục
+                            Dàng đã ơi là đã ❤️❤️🥰🔥🔥 </div>
+                    </div>
+                </div>
 
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">06/07/2025</div>
+                        <div class="timeline-text">Đi ăn mì cay nà, ôm cục
+                            dàng nàng, vlog đi chơi nà ❤️❤️ <br\>(Bạn đang
+                                đọc tin kia tui ghiền bạn quó đi) </div>
+                    </div>
+                </div>
 
-    <!-- <h1 class="main-title">WEb site natf của tôi</h1> -->
-    <button class="open-video-btn" id="openVideoBtn"><h3>KỈ NIỆM 3 THÁNG BÊN NHAU NHOÁ CỤC DÀNG ❤️</h3></button>
-
-    <!-- Popup video -->
-    <div class="video-popup" id="videoPopup">
-        <div class="video-container">
-            <button class="close-btn" id="closeVideoBtn">&times;</button>
-            <video id="myVideo" controls>
-                <source src="image/VideoA1.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ video HTML5.
-            </video>
-        </div>
-    </div>
-
-
-
-<!-- /*----------------------------------------------------------------------------*/ -->
-<!-- /*KỈ NIỆM 3 THÁNG QUEN NHAU*/ -->
-
-
-            
-<!-- /*----------------------------------------------------------------------------*/ -->
-<!-- /*KỈ NIỆM 3 THÁNG QUEN NHAU*/ -->
-
-
-    <!-- <h1 class="main-title">WEb site natf của tôi</h1> -->
-    <button class="open-video-btn" id="openVideoBtn"><h3>ĐANG LOADING ..... ❤️❤️ </h3> </button>
-
-    <!-- Popup video -->
-    <div class="video-popup" id="videoPopup">
-        <div class="video-container">
-            <button class="close-btn" id="closeVideoBtn">&times;</button>
-            <video id="myVideo" controls>
-                <source src="" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ video HTML5.
-            </video>
-        </div>
-    </div>
-
-
-
-<!-- /*----------------------------------------------------------------------------*/ -->
-<!-- /*KỈ NIỆM 3 THÁNG QUEN NHAU*/ -->
-
-
-
-            
-
-                <!-- Phần chân trang hiển thị số ngày yêu -->
-                <footer>
-                    Ngày bắt đầu: 20/04/2025 - Đã yêu nhau được <span
-                        id="total-days">0</span> ngày ❤️
-                    <p>Mỗi ngày qua đi là một trang mới trong câu chuyện tình
-                        yêu
-                        của chúng ta</p>
-                </footer>
             </div>
+        </div>
 
-            <!-- File JavaScript xử lý hiệu ứng và bộ đếm -->
-            <script src="script.js"></script>
-        </body>
-    </html>
+
+
+        <!-- /*----------------------------------------------------------------------------*/ -->
+        <!-- /*KỈ NIỆM 3 THÁNG QUEN NHAU*/ -->
+
+
+        <!-- <h1 class="main-title">WEb site natf của tôi</h1> -->
+        <button class="open-video-btn" id="openVideoBtn">
+            <h3>KỈ NIỆM 3 THÁNG BÊN NHAU NHOÁ CỤC DÀNG ❤️</h3>
+        </button>
+
+        <!-- Popup video -->
+        <div class="video-popup" id="videoPopup">
+            <div class="video-container">
+                <button class="close-btn" id="closeVideoBtn">&times;</button>
+                <video id="myVideo" controls>
+                    <source src="image/VideoA1.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ video HTML5.
+                </video>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- /*----------------------------------------------------------------------------*/ -->
+        <!-- /*KỈ NIỆM 3 THÁNG QUEN NHAU*/ -->
+
+
+
+        <!-- /*KỈ NIỆM 100 NGÀY QUEN NHAU*/ -->
+        <!-- /*----------------------------------------------------------------------------*/ -->
+
+
+        <button class="open-video-btn" id="openVideoBtn" onclick="window.open('100Days.html', '_blank')">
+            <h3>KỈ NIỆM 100 NGÀY BÊN NHAU NHOÁ CỤC DÀNG ❤️</h3>
+        </button>
+
+        <!-- /*----------------------------------------------------------------------------*/ -->
+        <!-- /*KỈ NIỆM 100 NGÀY QUEN NHAU*/ -->
+
+
+        <!-- Phần chân trang hiển thị số ngày yêu -->
+        <footer>
+            Ngày bắt đầu: 20/04/2025 - Đã yêu nhau được <span id="total-days">0</span> ngày ❤️
+            <p>Mỗi ngày qua đi là một trang mới trong câu chuyện tình
+                yêu
+                của chúng ta</p>
+        </footer>
+    </div>
+
+    <!-- File JavaScript xử lý hiệu ứng và bộ đếm -->
+    <script src="script.js"></script>
+</body>
+
+</html>
