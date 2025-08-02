@@ -917,7 +917,7 @@
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 .photo-container img {
-    width: 1260px;       /* chiều rộng */
+    width: 1255px;       /* chiều rộng */
     height: 400px;      /* chiều cao (nhỏ hơn chiều rộng) */
     object-fit: cover;  /* ảnh lấp đầy khung mà không méo */
     border-radius: 10px;
