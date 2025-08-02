@@ -916,12 +916,21 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
-        .photo-container img {
-    width: 500px;      /* hoặc kích thước bạn muốn */
-    height: 500px;     /* cố định chiều cao */
-    object-fit: cover; /* đảm bảo ảnh không bị méo, cắt vừa khung */
-    border-radius: 10px; /* tuỳ chọn cho bo góc ảnh */
+.photo-container img {
+    width: 1260px;       /* chiều rộng */
+    height: 400px;      /* chiều cao (nhỏ hơn chiều rộng) */
+    object-fit: cover;  /* ảnh lấp đầy khung mà không méo */
+    border-radius: 10px;
 }
+
+.photo-gallery-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* thêm dòng này nếu muốn xuống hàng khi màn hình nhỏ */
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
 /* ==================== */
