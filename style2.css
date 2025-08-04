@@ -916,19 +916,23 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
-.photo-container img {
-    width: 1260px;       /* chiều rộng */
-    height: 400px;      /* chiều cao (nhỏ hơn chiều rộng) */
-    object-fit: cover;  /* ảnh lấp đầy khung mà không méo */
+/* .photo-container img {
+    width: 100%;          
+    height: auto;          
+    object-fit: contain;  
     border-radius: 10px;
-}
+} */
 
-.photo-gallery-wrapper {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* thêm dòng này nếu muốn xuống hàng khi màn hình nhỏ */
+
+@media (max-width: 768px) {
+    .photo-container img {
+        width: 100%;
+        height: auto; /* Giữ nguyên tỷ lệ */
+    }
+
+    .photo-gallery-wrapper {
+        flex-direction: column; /* 2 ảnh xếp dọc */
+    }
 }
 
 
